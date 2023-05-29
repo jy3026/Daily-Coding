@@ -9,8 +9,9 @@ output = firstReverse('I love codestates');
 System.out.println(output); // "setatsedoc evol I"
  */
 public class Solution2Day2 {
-    public static String firstReverse(String str) {
-        // 방법 1
+
+    // 방법 1
+    public static String firstReverse1(String str) {
         String result = "";
 
         for(int i = str.length()-1 ; i >= 0; i--){
@@ -19,8 +20,10 @@ public class Solution2Day2 {
 
         return result;
 
-        // 방법 2 StringBuilder.reverse() 활용
+    }
 
+    // 방법 2 StringBuilder.reverse() 활용
+    public static String firstReverse2(String str) {
         StringBuilder sb = new StringBuilder(str);
         String output = sb.reverse().toString();
 
@@ -29,7 +32,7 @@ public class Solution2Day2 {
     }
 
     public static void main(String[] args) {
-        String output = firstReverse("codestates");
+        String output = firstReverse1("codestates");
         System.out.println(output);
     }
 }
