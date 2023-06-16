@@ -9,13 +9,13 @@ class Solution {
         for(int i=0;i<n;i++){
             list.add(num);
      
-            num += (long)x;  
+            num += x;  
         }
         
         long[] arr = new long[list.size()];
         
         for(int i=0;i<arr.length;i++){
-            arr[i] = (long)list.get(i);
+            arr[i] = list.get(i);
         }
         
         
