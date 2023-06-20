@@ -5,6 +5,7 @@ class Solution {
         String answer = "";
         List<String> list = new ArrayList<>();
         
+        //문자열.split(" ", -1)와 같이 호출하면 마지막에 오는 빈 문자열도 포함
         String[] arrs = s.split(" ", -1);
         
         for(int i=0;i<arrs.length;i++){
@@ -20,11 +21,5 @@ class Solution {
         }        
         
         return String.join(" ",list);
-    }
-    
-    public static void main(){
-        String result = solution("  tRy hello  WORLD    ");
-        System.out.println(result);
-    }
-    
+    }    
 }
