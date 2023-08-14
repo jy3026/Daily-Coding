@@ -1,24 +1,10 @@
-import java.util.*;
-
 class Solution {
     public long[] solution(int x, int n) {
-        List<Long> list = new ArrayList<>();
-        
-        long num = x;
-        
-        for(int i=0;i<n;i++){
-            list.add(num);
-     
-            num += x;  
+        long[] answer = new long[n];
+        for(int i=0 ; i<n;i++){
+            answer[i] = (long)x*(i+1);
         }
         
-        long[] arr = new long[list.size()];
-        
-        for(int i=0;i<arr.length;i++){
-            arr[i] = list.get(i);
-        }
-        
-        
-        return arr;
+        return answer;
     }
 }
