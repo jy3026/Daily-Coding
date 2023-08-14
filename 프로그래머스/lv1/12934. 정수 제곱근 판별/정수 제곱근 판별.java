@@ -1,11 +1,8 @@
 class Solution {
     public long solution(long n) {
-        long answer = -1;
-        
-        for(long i=1;i<=Math.sqrt(n);i++){
-            if(i*i == n) return (i+1) * (i+1); 
+        for(long i=1; i<=n;i++){
+            if(i == Math.sqrt(n)) return (i+1)*(i+1);
         }
-        
-        return answer;
+        return -1;
     }
 }
