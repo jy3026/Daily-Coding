@@ -3,13 +3,11 @@ import java.util.*;
 public class Solution {
     public int solution(int n) {
         int answer = 0;
-
-        String[] nums = String.valueOf(n).split("");
         
-        for(String num : nums){
-            answer += Integer.parseInt(num);
+        while(n > 0){
+            answer += n%10;
+            n = n/10;
         }
-        
 
         return answer;
     }
