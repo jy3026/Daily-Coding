@@ -1,14 +1,14 @@
 class Solution {
     public boolean solution(int x) {
+        int number = x;
         int num = 0;
-        String n = "" + x;
-        String[] arrs = n.split("");
-        
-        for(String arr : arrs){
-            num += Integer.parseInt(arr);
+        while(x>0){
+            num += x%10;
+            x = x/10;
         }
         
-        if(x%num == 0) return true;
-        else return false;
+        if(number%num==0) return true;
+        return false;
+
     }
 }
