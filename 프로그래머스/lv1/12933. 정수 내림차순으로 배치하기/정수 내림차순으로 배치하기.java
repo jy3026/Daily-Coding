@@ -2,31 +2,10 @@ import java.util.*;
 
 class Solution {
     public long solution(long n) {
-        long answer = 0;
-        String num = "" + n;
+        String[] nums = String.valueOf(n).split("");
+        Arrays.sort(nums,Collections.reverseOrder());
+        String number = String.join("",nums);
         
-        Long[] arr = new Long[num.length()];
-        
-        int index = 0;
-        
-        while(n > 0){
-            arr[index] = n%10;
-            
-            n /= 10;
-            
-            index++;
-        }
-        
-        Arrays.sort(arr,Collections.reverseOrder());
-        
-        String result = "";
-        
-        for(long number : arr){
-            result += String.valueOf(number);
-        }
-        
-        answer = Long.parseLong(result);
-        
-        return answer;
+        return Long.valueOf(number);
     }
 }
