@@ -1,22 +1,11 @@
 class Solution {
     public String solution(int n) {
         String answer = "";
-        String prevword = "박";
         
-        
-        while(n>0){
-            String curword= "";
-            if(prevword.equals("박")) curword = "수";
-            else curword = "박";
-            
-            answer+=curword;
-                
-            prevword = curword;
-            
-            
-            n--;
+        for(int i=0;i<n;i++){
+            if(i%2==1) answer+="박";
+            else answer+="수";
         }
-        
         
         return answer;
     }
