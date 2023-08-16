@@ -5,8 +5,7 @@ class Solution {
         String answer = "";
         
         String[] arr = s.split("");
-        
-        Arrays.sort(arr, Collections.reverseOrder());
+        Arrays.sort(arr,Collections.reverseOrder());
         
         answer = String.join("",arr);
         
