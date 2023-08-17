@@ -1,16 +1,17 @@
-class Solution {
+class Solution {    
     public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        int min = (n<m ? n:m);
         
-        // 최대공약수 공식
-        int a = Math.max(n, m);
-        int b = Math.min(n, m);
-        while (b != 0) {
-            int r = a % b;
-            a = b;
-            b = r;
+        for(int i=min;i>0;i--){
+            if(n%i == 0 && m%i==0){
+                answer[0] = i;
+                break;
+            }
         }
-        // 최대 공배수 공식
-        int[] answer = new int[]{a,(n*m)/a};
+        
+        answer[1] = n*m / answer[0];
+        
         return answer;
     }
 }
