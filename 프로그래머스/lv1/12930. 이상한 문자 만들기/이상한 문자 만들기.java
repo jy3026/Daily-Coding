@@ -1,25 +1,23 @@
-import java.util.*;
-
 class Solution {
-    public static String solution(String s) {
+    public String solution(String s) {
         String answer = "";
-        List<String> list = new ArrayList<>();
+        String[] word = s.split(" ",-1);
         
-        //문자열.split(" ", -1)와 같이 호출하면 마지막에 오는 빈 문자열도 포함
-        String[] arrs = s.split(" ", -1);
-        
-        for(int i=0;i<arrs.length;i++){
-            String[] arr = arrs[i].split("");
+        for(String a : word){
+            String[] aph = a.split("");
+            long count = 0;
             
-            for(int j=0;j<arr.length;j++)
-            {
-                if(j%2 == 0) arr[j] = arr[j].toUpperCase();
-                else arr[j] = arr[j].toLowerCase();
+            for(String p : aph){
+                if(count % 2 == 0) p = p.toUpperCase();    
+                else if(count % 2 == 1) p = p.toLowerCase();
+                
+                answer += p;
+                count++;
             }
-            
-            list.add(String.join("",arr));
-        }        
+            answer += " ";
+        }
         
-        return String.join(" ",list);
-    }    
+        
+        return answer.substring(0,answer.length()-1);
+    }
 }
