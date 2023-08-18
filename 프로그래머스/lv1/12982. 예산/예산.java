@@ -12,7 +12,6 @@ class Solution {
             if(number > budget) return answer;
             
             answer++;
-        
         }
 
         
