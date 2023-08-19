@@ -1,19 +1,22 @@
 class Solution {
     public String solution(String s, int n) {
-        StringBuilder answer = new StringBuilder();
-
-        for (int i = 0; i < s.length(); i++) {
+        String answer = "";
+        
+        for(int i=0;i<s.length();i++){
             char c = s.charAt(i);
-
-            if (Character.isUpperCase(c)) {
-                c = (char) ((c - 'A' + n) % 26 + 'A');
-            } else if (Character.isLowerCase(c)) {
-                c = (char) ((c - 'a' + n) % 26 + 'a');
+            if(c >= 'A' && c <= 'Z') {
+                if(c+n > 90){
+                    answer += (char)(c+n-26);
+                }else answer += (char)(c+n);
             }
-
-            answer.append(c);
+            else if(c >= 'a' && c <= 'z') {
+                if(c+n > 122){
+                    answer += (char)(c+n-26);
+                }else answer += (char)(c+n);
+            }
+            else answer += c;
         }
-
-        return answer.toString();
+        
+        return answer;
     }
 }
