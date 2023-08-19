@@ -1,16 +1,12 @@
 class Solution {
     public int solution(String t, String p) {
         int answer = 0;
+        int num = p.length();
         
-        String[] arr = t.split("");
-        
-        for(int i=0;i< t.length()-p.length()+1;i++){
-            String number = "";
-            for(int j=0;j<p.length();j++){
-                number += arr[i+j];
-            }
-            if(Long.parseLong(number) <= Long.parseLong(p)) answer++;
-            
+        for(int i=0;i<=t.length()-p.length();i++){
+            long number = Long.valueOf(t.substring(i,num));
+            if(Long.valueOf(p) >= number) answer++;
+            num++;
         }
         
         return answer;
