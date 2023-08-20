@@ -2,19 +2,16 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String[] strings, int n) {
-        Arrays.sort(strings, new Comparator<String>() {
+        Arrays.sort(strings,new Comparator<String>(){
             @Override
-            public int compare(String s1, String s2) {
-                char c1 = s1.charAt(n);
-                char c2 = s2.charAt(n);
-                if (c1 == c2) {
-                    return s1.compareTo(s2);
-                } else {
-                    return Character.compare(c1, c2);
-                }
+            public int compare(String o1,String o2){
+                if(o1.charAt(n) > o2.charAt(n)) return 1;
+                else if(o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2);
+                else if(o1.charAt(n) < o2.charAt(n)) return -1;
+                else return 0;
             }
         });
-
+        
         return strings;
     }
 }
