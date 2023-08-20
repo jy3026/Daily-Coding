@@ -3,20 +3,15 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
-        
-        for(int i=0;i<commands.length;i++){
-            List<Integer> list = new ArrayList<>();
-            
-            for(int j=commands[i][0];j<=commands[i][1];j++){
-                list.add(array[j-1]);
-            }
-            int[] arr = list.stream().mapToInt(a -> a).toArray();
-            Arrays.sort(arr);
-            // System.out.print(Arrays.toString(arr));
-            answer[i] = arr[commands[i][2]-1];
-            
+        int count = 0;
+        for(int[] command : commands){
+            int[] num = Arrays.copyOfRange(array,command[0]-1,command[1]);
+            Arrays.sort(num);
+            // System.out.println(Arrays.toString(num));
+            // System.out.println(num[command[2]-1]);
+            answer[count] = num[command[2]-1];
+            count++;
         }
-        
         return answer;
     }
 }
