@@ -1,4 +1,3 @@
--- 코드를 입력하세요
 SELECT j.FLAVOR
 FROM (SELECT FLAVOR, SUM(TOTAL_ORDER) AS t
         FROM JULY
