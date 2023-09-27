@@ -1,5 +1,5 @@
 -- 코드를 입력하세요
-SELECT CONCAT('/home/grep/src/', f.BOARD_ID,'/', f.FILE_ID, f.FILE_NAME, f.FILE_EXT) AS FILE_PATH
+SELECT CONCAT('/home/grep/src/', f.BOARD_ID,'/', f.FILE_ID, f.FILE_NAME, f.FILE_EXT) FILE_NAME
 FROM (SELECT BOARD_ID
         FROM USED_GOODS_BOARD
         ORDER BY VIEWS DESC
