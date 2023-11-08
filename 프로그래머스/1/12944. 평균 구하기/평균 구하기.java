@@ -4,6 +4,6 @@ class Solution {
         for(int num : arr) {
             result += num;
         }
-        return result/arr.length;
+        return result / arr.length;
     }
 }
