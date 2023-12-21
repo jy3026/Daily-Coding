@@ -16,7 +16,6 @@ class Solution {
 
         Collections.reverse(resultList);
 
-        // 다시 int 배열로 변환
         result = resultList.stream()
                            .mapToInt(Integer::intValue)
                            .toArray();
