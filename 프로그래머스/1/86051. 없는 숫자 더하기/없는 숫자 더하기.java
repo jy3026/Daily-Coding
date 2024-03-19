@@ -10,6 +10,7 @@ class Solution {
         for(int i=0;i<10;i++){
             if(!list.contains(i)) answer+=i;
         }
+        
         return answer;
     }
 }
