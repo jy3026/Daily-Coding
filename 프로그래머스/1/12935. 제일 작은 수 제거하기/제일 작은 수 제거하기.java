@@ -17,7 +17,6 @@ class Solution {
         }
         
         int[] result = list.stream().mapToInt(i->i).toArray();
-        
         return result;
     }
 }
