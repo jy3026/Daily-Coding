@@ -2,4 +2,4 @@
 SELECT *
 FROM FOOD_PRODUCT
 ORDER BY PRICE DESC 
-limit 1;
+limit 1
